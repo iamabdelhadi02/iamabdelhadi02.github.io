@@ -9,6 +9,13 @@ import {
 } from 'lucide-react'
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn'
 
+// ── Shared slide variants (direction-aware horizontal slider) ───────────
+const slideVariants = {
+  enter: (dir: number) => ({ x: dir > 0 ? 200 : -200, opacity: 0 }),
+  center: { x: 0, opacity: 1 },
+  exit: (dir: number) => ({ x: dir > 0 ? -200 : 200, opacity: 0 }),
+}
+
 // ── Language Master phone carousel ──────────────────────────────────────
 const lmScreenshots = [
   { src: '/screenshots/lm-onboarding.png', label: 'Onboarding' },
@@ -21,14 +28,26 @@ const lmScreenshots = [
 function PhoneCarousel() {
   const [current, setCurrent] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
+  const directionRef = useRef(1)
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  const prev = () => setCurrent((c) => (c - 1 + lmScreenshots.length) % lmScreenshots.length)
-  const next = () => setCurrent((c) => (c + 1) % lmScreenshots.length)
+  const goTo = (i: number) => {
+    directionRef.current = i > current ? 1 : -1
+    setCurrent(i)
+  }
+  const prev = () => {
+    directionRef.current = -1
+    setCurrent((c) => (c - 1 + lmScreenshots.length) % lmScreenshots.length)
+  }
+  const next = () => {
+    directionRef.current = 1
+    setCurrent((c) => (c + 1) % lmScreenshots.length)
+  }
 
   useEffect(() => {
     if (!isPaused) {
       intervalRef.current = setInterval(() => {
+        directionRef.current = 1
         setCurrent((c) => (c + 1) % lmScreenshots.length)
       }, 3500)
     }
@@ -45,13 +64,15 @@ function PhoneCarousel() {
     >
       {/* Screenshot display — no phone frame, no notch, full visibility */}
       <div className="relative" style={{ width: 200, height: 420 }}>
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="popLayout" custom={directionRef.current}>
           <motion.div
             key={current}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.45, ease: 'easeInOut' }}
+            custom={directionRef.current}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.5, ease: [0.32, 0.08, 0.24, 1] }}
             className="w-full h-full relative overflow-hidden rounded-xl"
           >
             <Image
@@ -89,7 +110,7 @@ function PhoneCarousel() {
         {lmScreenshots.map((_, i) => (
           <button
             key={i}
-            onClick={() => setCurrent(i)}
+            onClick={() => goTo(i)}
             className={`h-1 rounded-full transition-all duration-300 ${
               i === current ? 'w-5 bg-accent' : 'w-1.5 bg-border-c'
             }`}
@@ -111,14 +132,26 @@ const wgScreenshots = [
 function WegetherCarousel() {
   const [current, setCurrent] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
+  const directionRef = useRef(1)
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  const prev = () => setCurrent((c) => (c - 1 + wgScreenshots.length) % wgScreenshots.length)
-  const next = () => setCurrent((c) => (c + 1) % wgScreenshots.length)
+  const goTo = (i: number) => {
+    directionRef.current = i > current ? 1 : -1
+    setCurrent(i)
+  }
+  const prev = () => {
+    directionRef.current = -1
+    setCurrent((c) => (c - 1 + wgScreenshots.length) % wgScreenshots.length)
+  }
+  const next = () => {
+    directionRef.current = 1
+    setCurrent((c) => (c + 1) % wgScreenshots.length)
+  }
 
   useEffect(() => {
     if (!isPaused) {
       intervalRef.current = setInterval(() => {
+        directionRef.current = 1
         setCurrent((c) => (c + 1) % wgScreenshots.length)
       }, 3500)
     }
@@ -135,13 +168,15 @@ function WegetherCarousel() {
     >
       {/* Screenshot display */}
       <div className="relative" style={{ width: 200, height: 420 }}>
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="popLayout" custom={directionRef.current}>
           <motion.div
             key={current}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.45, ease: 'easeInOut' }}
+            custom={directionRef.current}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.5, ease: [0.32, 0.08, 0.24, 1] }}
             className="w-full h-full relative overflow-hidden rounded-xl"
           >
             <Image
@@ -179,7 +214,7 @@ function WegetherCarousel() {
         {wgScreenshots.map((_, i) => (
           <button
             key={i}
-            onClick={() => setCurrent(i)}
+            onClick={() => goTo(i)}
             className={`h-1 rounded-full transition-all duration-300 ${
               i === current ? 'w-5 bg-accent' : 'w-1.5 bg-border-c'
             }`}
