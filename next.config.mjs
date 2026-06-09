@@ -4,9 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // If deploying to GitHub Pages with a repo subfolder, set:
-  // basePath: '/your-repo-name',
-  // assetPrefix: '/your-repo-name/',
+  basePath: '/portfolio',
+  assetPrefix: '/portfolio/',
   trailingSlash: true,
 }
 
