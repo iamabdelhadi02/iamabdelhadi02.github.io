@@ -12,13 +12,13 @@ const experiences = [
     current: false,
     color: 'accent',
     bullets: [
-      'Built and scaled a serverless backend on AWS (Lambda, DynamoDB, EC2, API Gateway, S3, SNS, Amplify) serving tourists and guides across multiple time zones.',
-      'Developed and maintained production React Native apps — Wegether Tourist and Wegether Guide — each on both iOS and Android — end-to-end.',
-      'Designed and optimized DynamoDB schemas for high-throughput travel platform read/write patterns (bookings, profiles, reviews).',
-      'Architected and deployed a real-time chat system on EC2 with presence indicators and push notifications for tourist-guide communication.',
-      'Integrated an LLM-powered AI itinerary builder feature into the tourist app — the platform\'s first AI feature.',
-      'Implemented multi-language support, multi-currency pricing, and payment processing with split payouts.',
-      'Set up CI/CD pipelines for automated testing and zero-downtime deployment to both App Store and Google Play.',
+      'Designed and scaled a serverless AWS backend (Lambda, DynamoDB, EC2, API Gateway, S3, SNS, Amplify) serving tourists and guides across multiple time zones.',
+      'Built and maintained two React Native apps — Wegether Tourist and Wegether Guide — each deployed to both iOS and Android (4 app store listings).',
+      'Modeled DynamoDB schemas for travel-platform read/write patterns: bookings, user profiles, reviews, and multi-currency payments.',
+      'Architected a real-time chat system on EC2 with presence indicators and push notifications via SNS — no polling, no delay.',
+      'Integrated an LLM-powered AI itinerary builder — the platform\'s first AI feature — directly into the booking flow.',
+      'Implemented multi-language support, multi-currency pricing, and split-payout payment processing.',
+      'Set up CI/CD for automated testing and deployment to both App Store and Google Play.',
     ],
   },
   {
@@ -108,7 +108,8 @@ export default function Experience() {
             Experience
           </h2>
           <p className="text-muted-2 mt-3 max-w-lg">
-            Five years in the trenches — shipping code, scaling systems, and chasing the AI frontier.
+            ~5 years building and maintaining a live production platform, plus earlier
+            engineering training.
           </p>
         </FadeIn>
 

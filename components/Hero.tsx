@@ -8,14 +8,14 @@ const agentLines = [
   { text: '> initializing agentic runtime...', type: 'cmd', delay: 200 },
   { text: '✓ tools registered: [web_search, code_exec, memory, mcp]', type: 'success', delay: 800 },
   { text: '> deploying serverless backend on AWS...', type: 'cmd', delay: 1500 },
-  { text: '✓ Lambda + DynamoDB + API Gateway: online', type: 'success', delay: 2100 },
+  { text: '✓ Lambda + DynamoDB + API Gateway: serving traffic', type: 'success', delay: 2100 },
   { text: '> shipping React Native apps to stores...', type: 'cmd', delay: 2900 },
-  { text: '✓ iOS App Store + Google Play: deployed (4 apps)', type: 'success', delay: 3500 },
+  { text: '✓ iOS App Store + Google Play: 2 apps, both platforms', type: 'success', delay: 3500 },
   { text: '> integrating LLM with tool calling pipeline...', type: 'cmd', delay: 4300 },
   { text: '✓ itinerary agent: active', type: 'success', delay: 4900 },
   { text: '', type: 'gap', delay: 5200 },
   { text: '> agent.ready()', type: 'cmd', delay: 5400 },
-  { text: '← "Let\'s build something extraordinary."', type: 'info', delay: 6000 },
+  { text: '← "Tell me what you need built."', type: 'info', delay: 6000 },
 ]
 
 function AgentTerminal() {
@@ -135,11 +135,11 @@ export default function Hero() {
               transition={{ delay: 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-text mb-6"
             >
-              Building agents
+              I turn ideas
               <br />
-              <span className="gradient-text">that actually</span>
+              <span className="gradient-text">into shipped</span>
               <br />
-              <span className="text-text">ship.</span>
+              <span className="text-text">products.</span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -148,9 +148,9 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-muted-2 text-lg leading-relaxed max-w-md mb-8"
             >
-              Agentic AI Engineer & Fullstack Developer. I design and build intelligent
-              systems — from LLM-powered agents with tool calling and MCPs, to production
-              mobile apps and serverless backends on AWS.
+              I build end-to-end: agentic AI systems with tool calling and multi-agent
+              orchestration, production mobile apps on iOS and Android, and serverless
+              backends that scale without idle cost.
             </motion.p>
 
             {/* Role tags */}

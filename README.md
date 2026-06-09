@@ -2,7 +2,7 @@
 
 **Agentic AI Engineer & Fullstack Developer**
 
-> Next.js · TypeScript · Tailwind CSS · Framer Motion
+A static portfolio site built with Next.js, TypeScript, and Tailwind CSS. No runtime server — compiles to static HTML deployable anywhere.
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Layer | Tech |
 |---|---|
-| Framework | Next.js 16 + React + TypeScript |
-| Styling | Tailwind CSS + custom design tokens |
-| Animation | Framer Motion (scroll-triggered) |
-| Fonts | Bricolage Grotesque + DM Sans + JetBrains Mono (Google Fonts CDN) |
-| Deployment | GitHub Pages / Vercel / Netlify |
+| Framework | Next.js 16 + React 18 + TypeScript |
+| Styling | Tailwind CSS + custom design tokens (see `tailwind.config.ts`) |
+| Animation | Framer Motion (scroll-triggered via `useInView`) |
+| Fonts | Bricolage Grotesque + DM Sans + JetBrains Mono (Google Fonts) |
+| Deployment | Static export — works on Vercel, GitHub Pages, or Netlify |
 
 ---
 

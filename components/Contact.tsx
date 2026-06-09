@@ -54,11 +54,12 @@ export default function Contact() {
             </div>
 
             <h2 className="font-display text-5xl sm:text-6xl font-bold text-text mb-4">
-              Let's build together.
+              Let's build something.
             </h2>
             <p className="text-muted-2 text-lg max-w-md mx-auto leading-relaxed mb-10">
-              Whether it's an agentic AI system, a fullstack product, or
-              something that doesn't exist yet — I want to hear about it.
+              If you need a system built — whether an agentic AI feature, a mobile
+              app, or a serverless backend — reach out. I take projects from
+              architecture to deployment.
             </p>
 
             {/* Primary CTA */}

@@ -4,14 +4,13 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Abdelhadi Djafer — Agentic AI Engineer & Fullstack Developer',
   description:
-    'Building AI agents, agentic systems, and fullstack products. React Native · AWS Serverless · LLM Integration · Tool Calling · MCPs.',
+    'End-to-end engineering: agentic AI systems, production mobile apps (iOS + Android), and serverless AWS backends. Based in Algeria, working remotely.',
   keywords: [
     'Agentic AI Engineer',
     'Fullstack Developer',
-    'LLM Integration',
     'React Native',
     'AWS Serverless',
-    'AI Agents',
+    'LLM Integration',
     'Tool Calling',
     'MCP',
     'Claude AI',
@@ -19,14 +18,14 @@ export const metadata: Metadata = {
   authors: [{ name: 'Abdelhadi Djafer' }],
   openGraph: {
     title: 'Abdelhadi Djafer — Agentic AI Engineer',
-    description: 'Building AI agents, agentic systems, and fullstack products.',
+    description: 'End-to-end engineering: agentic AI, mobile apps, serverless backends.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     creator: '@iamabdelhadi02',
     title: 'Abdelhadi Djafer — Agentic AI Engineer',
-    description: 'Building AI agents, agentic systems, and fullstack products.',
+    description: 'End-to-end engineering: agentic AI, mobile apps, serverless backends.',
   },
 }
 

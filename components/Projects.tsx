@@ -186,7 +186,8 @@ export default function Projects() {
             Selected Work
           </h2>
           <p className="text-muted-2 mt-3 max-w-lg">
-            Production systems in the wild — from live travel platforms to AI-native concepts.
+            Projects I've built and shipped — from a live two-app travel platform to
+            AI-native prototypes.
           </p>
         </FadeIn>
 
@@ -213,12 +214,19 @@ export default function Projects() {
                   <p className="text-muted-2 text-sm mb-2 font-mono">
                     Travel Platform · US-based startup
                   </p>
-                  <p className="text-muted-2 leading-relaxed mb-6">
-                    A two-app travel platform connecting travellers with local guides worldwide —
-                    one app for tourists, one for guides, both on iOS and Android.
-                    Full-cycle: discovery → booking → real-time chat → payments → reviews. I took over
-                    in the early stages, designed the serverless AWS architecture, and integrated
-                    the platform's first LLM-powered feature: an AI itinerary builder.
+                  <p className="text-muted-2 leading-relaxed mb-4">
+                    A two-app travel platform connecting tourists with local guides across
+                    multiple time zones. I joined in the early stages, designed the serverless
+                    architecture, and built across the full stack for ~5 years — from DynamoDB
+                    schema design to App Store deployment.
+                  </p>
+                  <p className="text-muted-2 leading-relaxed mb-4 text-sm">
+                    <span className="text-text font-medium">Business outcome:</span> The
+                    serverless architecture avoids idle infrastructure cost — you pay for
+                    usage, not uptime. Real-time chat on EC2 with presence indicators means
+                    tourists and guides communicate without polling delays. The LLM itinerary
+                    builder was the platform's first AI feature, integrated directly into the
+                    tourist app's booking flow.
                   </p>
 
                   {/* Architecture highlights */}
@@ -310,11 +318,18 @@ export default function Projects() {
                   Language Master
                 </h3>
                 <p className="text-muted-2 text-sm font-mono mb-4">AI Language Learning App</p>
-                <p className="text-muted-2 text-sm leading-relaxed mb-6">
-                  A Duolingo-style language learning app powered by AI conversations. Real-time
-                  AI teacher sessions with speech, pronunciation scoring, and personalized lesson
-                  paths. Built to explore and experiment with agentic AI development patterns
-                  in a mobile context.
+                <p className="text-muted-2 text-sm leading-relaxed mb-4">
+                  An AI-native language learning prototype that replaces static lesson trees
+                  with real-time conversational AI. Speech input, pronunciation scoring, and
+                  a personalized lesson path — the AI adapts to the learner rather than
+                  routing them through a fixed curriculum.
+                </p>
+                <p className="text-muted-2 text-sm leading-relaxed mb-4">
+                  <span className="text-text font-medium">Why it matters:</span> Built to
+                  explore how agentic AI patterns (tool calling, memory, multi-step reasoning)
+                  behave in a mobile context. The codebase demonstrates the integration points
+                  between an LLM backend and a React Native client — the same patterns that
+                  power production AI features.
                 </p>
                 <p className="text-xs text-muted font-mono mb-4 italic">
                   Screenshots from the initial design prototype
@@ -363,11 +378,18 @@ export default function Projects() {
                   This Portfolio
                 </h3>
                 <p className="text-muted-2 text-sm font-mono mb-4">Personal Portfolio Website</p>
-                <p className="text-muted-2 text-sm leading-relaxed mb-6">
-                  A portfolio shouldn't just tell you I'm good — it should show you.
-                  Built with Next.js, TypeScript, Tailwind, and Framer Motion. Designed
-                  for Stripe-level polish with scroll-triggered animations, a live agent
-                  terminal in the hero, and production-grade static export for GitHub Pages/Vercel.
+                <p className="text-muted-2 text-sm leading-relaxed mb-4">
+                  A static Next.js site designed for fast, zero-cost deployment. Built with
+                  TypeScript, Tailwind CSS with custom design tokens, and Framer Motion for
+                  scroll-triggered animations — all compiled to static HTML that runs on any
+                  host without a server.
+                </p>
+                <p className="text-muted-2 text-sm leading-relaxed mb-4">
+                  <span className="text-text font-medium">What this demonstrates:</span> the
+                  same attention to performance, accessibility, and deployment discipline I
+                  bring to client projects. Static export means no runtime costs, no
+                  cold starts, and a single build that deploys identically to Vercel,
+                  GitHub Pages, or Netlify.
                 </p>
 
                 {/* Tech highlights */}

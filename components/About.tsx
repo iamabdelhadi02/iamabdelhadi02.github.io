@@ -12,15 +12,15 @@ const stats = [
 const focuses = [
   {
     title: 'Agentic Systems',
-    desc: 'Building LLM agents that plan, act, and recover — with proper tool calling, memory, and multi-agent coordination.',
+    desc: 'Multi-agent workflows, tool calling, MCP integrations, and autonomous AI products. Building beyond chatbots — systems that reason, plan, and act.',
   },
   {
-    title: 'Fullstack Execution',
-    desc: 'From DynamoDB schema design to React Native animations — I build and ship entire products, not just features.',
+    title: 'Fullstack Delivery',
+    desc: 'From DynamoDB schema design to App Store deployment. I build entire products, spanning infrastructure, backend, and mobile clients.',
   },
   {
     title: 'AI-Native Products',
-    desc: 'Products where the AI is the core experience, not a bolted-on feature. Integrating Claude and LLMs into real workflows.',
+    desc: 'Integrating LLMs into real user workflows where AI is the core experience rather than a sidebar feature. Shipping, measuring, iterating.',
   },
 ]
 
@@ -50,19 +50,19 @@ export default function About() {
                 Agentic AI Engineer and Fullstack Developer based in Chlef, Algeria.
               </p>
               <p>
-                I spent the better part of five years building and scaling a production
-                travel platform at <span className="text-text">Wegether Travel LLC</span> —
-                shipping a travel platform across iOS and Android — two apps (Tourist + Guide),
-                each on both stores. I took over in the early stages, designed the serverless AWS
-                architecture, and integrated the platform's first LLM-powered feature:
-                an AI itinerary builder.
+                For ~5 years I was the technical core of{' '}
+                <span className="text-text">Wegether Travel LLC</span>, a US-based startup,
+                where I built and maintained a two-app travel platform across iOS and Android.
+                I took over in the early stages, designed the serverless AWS architecture
+                (Lambda, DynamoDB, API Gateway, EC2, S3, SNS), and integrated the platform's
+                first LLM-powered feature — an AI itinerary builder.
               </p>
               <p>
-                Today I'm focused on the frontier: building{' '}
+                Today I build{' '}
                 <span className="text-accent">agentic AI systems</span> — multi-agent
-                workflows, tool-calling pipelines, MCP integrations, and autonomous AI
-                products that move beyond basic chatbots into systems that can reason,
-                plan, and act in the real world.
+                workflows, tool-calling pipelines, MCP integrations, and autonomous
+                systems that move beyond chatbots into software that reasons, plans,
+                and acts.
               </p>
               <p>
                 I hold{' '}
@@ -83,12 +83,9 @@ export default function About() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-4">
-                I don't just use AI: I engineer it into production.
-              </p>
               <p>
-                Trilingual. Self-directed. Builder-first. I think in systems, move fast,
-                and take full ownership from idea to deployed product.
+                Trilingual (Arabic, English, French). I work remotely, communicate
+                across time zones, and take projects from architecture to deployment.
               </p>
             </div>
           </FadeIn>

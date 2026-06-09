@@ -121,7 +121,8 @@ export default function Skills() {
             Skills & Stack
           </h2>
           <p className="text-muted-2 mt-3 max-w-lg">
-            A deliberate toolkit — everything earned through building real, shipped products.
+            Every technology listed here was used in a shipped product — from the
+            Wegether platform to agentic AI systems.
           </p>
         </FadeIn>
 
@@ -167,7 +168,7 @@ export default function Skills() {
         <FadeIn>
           <div className="accent-line mb-8" />
           <div className="flex items-center gap-3 mb-6">
-            <span className="font-mono text-xs text-accent">Certifications</span>
+            <span className="font-mono text-xs text-accent">Certifications & Courses</span>
             <span className="text-muted font-mono text-xs">— Anthropic Academy & beyond</span>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
