@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import {
@@ -20,11 +20,29 @@ const lmScreenshots = [
 
 function PhoneCarousel() {
   const [current, setCurrent] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
   const prev = () => setCurrent((c) => (c - 1 + lmScreenshots.length) % lmScreenshots.length)
   const next = () => setCurrent((c) => (c + 1) % lmScreenshots.length)
 
+  useEffect(() => {
+    if (!isPaused) {
+      intervalRef.current = setInterval(() => {
+        setCurrent((c) => (c + 1) % lmScreenshots.length)
+      }, 3500)
+    }
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current)
+    }
+  }, [isPaused, lmScreenshots.length])
+
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div
+      className="flex flex-col items-center gap-4"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       {/* Screenshot display — no phone frame, no notch, full visibility */}
       <div className="relative" style={{ width: 200, height: 420 }}>
         <motion.div
@@ -90,11 +108,29 @@ const wgScreenshots = [
 
 function WegetherCarousel() {
   const [current, setCurrent] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
   const prev = () => setCurrent((c) => (c - 1 + wgScreenshots.length) % wgScreenshots.length)
   const next = () => setCurrent((c) => (c + 1) % wgScreenshots.length)
 
+  useEffect(() => {
+    if (!isPaused) {
+      intervalRef.current = setInterval(() => {
+        setCurrent((c) => (c + 1) % wgScreenshots.length)
+      }, 3500)
+    }
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current)
+    }
+  }, [isPaused, wgScreenshots.length])
+
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div
+      className="flex flex-col items-center gap-4"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       {/* Screenshot display */}
       <div className="relative" style={{ width: 200, height: 420 }}>
         <motion.div
