@@ -14,7 +14,6 @@ const lmScreenshots = [
   { src: '/screenshots/lm-onboarding.png', label: 'Onboarding' },
   { src: '/screenshots/lm-auth.png', label: 'Auth' },
   { src: '/screenshots/lm-languages.png', label: 'Language Selection' },
-  { src: '/screenshots/lm-home.png', label: 'Home & Navigation' },
   { src: '/screenshots/lm-lessons.png', label: 'Lesson Screen' },
   { src: '/screenshots/lm-ai-teacher.png', label: 'AI Teacher' },
 ]
