@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import {
   ExternalLink, Github, Smartphone, Server, Globe,
   ChevronLeft, ChevronRight, Lock
@@ -45,22 +45,24 @@ function PhoneCarousel() {
     >
       {/* Screenshot display — no phone frame, no notch, full visibility */}
       <div className="relative" style={{ width: 200, height: 420 }}>
-        <motion.div
-          key={current}
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          transition={{ duration: 0.3 }}
-          className="w-full h-full relative overflow-hidden rounded-xl"
-        >
-          <Image
-            src={lmScreenshots[current].src}
-            alt={lmScreenshots[current].label}
-            fill
-            className="object-contain"
-            unoptimized
-          />
-        </motion.div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.45, ease: 'easeInOut' }}
+            className="w-full h-full relative overflow-hidden rounded-xl"
+          >
+            <Image
+              src={lmScreenshots[current].src}
+              alt={lmScreenshots[current].label}
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       {/* Controls */}
@@ -133,22 +135,24 @@ function WegetherCarousel() {
     >
       {/* Screenshot display */}
       <div className="relative" style={{ width: 200, height: 420 }}>
-        <motion.div
-          key={current}
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          transition={{ duration: 0.3 }}
-          className="w-full h-full relative overflow-hidden rounded-xl"
-        >
-          <Image
-            src={wgScreenshots[current].src}
-            alt={wgScreenshots[current].label}
-            fill
-            className="object-contain"
-            unoptimized
-          />
-        </motion.div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.45, ease: 'easeInOut' }}
+            className="w-full h-full relative overflow-hidden rounded-xl"
+          >
+            <Image
+              src={wgScreenshots[current].src}
+              alt={wgScreenshots[current].label}
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       {/* Controls */}
