@@ -493,10 +493,16 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex items-center gap-2 text-muted font-mono text-xs">
-                  <Github size={12} />
-                  <span>Repository link to be added after deployment</span>
-                </div>
+                <a
+                  href="https://github.com/iamabdelhadi02/iamabdelhadi02.github.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 px-4 py-2 border border-border-c rounded-lg text-sm font-mono text-muted-2 hover:border-accent/40 hover:text-accent transition-all"
+                >
+                  <Github size={14} />
+                  View Source
+                  <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
               </div>
             </div>
           </StaggerItem>
