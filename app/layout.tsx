@@ -2,11 +2,11 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Abdelhadi Djafer — Agentic AI Engineer & Fullstack Developer',
+  title: 'Abdelhadi Djafer — Fullstack Developer & Agentic AI Builder',
   description:
     'End-to-end product engineering: intelligent automation, conversational AI, cross-platform mobile apps, and cloud infrastructure. Based in Algeria, working remotely.',
   keywords: [
-    'Agentic AI Engineer',
+    'Agentic AI Builder',
     'Fullstack Developer',
     'Intelligent Automation',
     'Conversational AI',
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Abdelhadi Djafer' }],
   openGraph: {
-    title: 'Abdelhadi Djafer — Agentic AI Engineer',
+    title: 'Abdelhadi Djafer — Fullstack Developer & Agentic AI Builder',
     description: 'End-to-end engineering: agentic AI, mobile apps, serverless backends.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     creator: '@iamabdelhadi02',
-    title: 'Abdelhadi Djafer — Agentic AI Engineer',
+    title: 'Abdelhadi Djafer — Fullstack Developer & Agentic AI Builder',
     description: 'End-to-end engineering: agentic AI, mobile apps, serverless backends.',
   },
 }

@@ -1,6 +1,6 @@
 # Abdelhadi Djafer — Portfolio
 
-**Agentic AI Engineer & Fullstack Developer**
+**Fullstack Developer & Agentic AI Builder**
 
 A static portfolio site built with Next.js, TypeScript, and Tailwind CSS. No runtime server — compiles to static HTML deployable anywhere.
 

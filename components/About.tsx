@@ -46,7 +46,7 @@ export default function About() {
             <div className="space-y-5 text-muted-2 leading-relaxed">
               <p>
                 I'm <span className="text-text font-medium">Abdelhadi Djafer</span> — an
-                Agentic AI Engineer and Fullstack Developer based in Chlef, Algeria.
+                Fullstack Developer & Agentic AI Builder based in Chlef, Algeria.
               </p>
               <p>
                 For ~5 years I was the technical core of{' '}
