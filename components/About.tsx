@@ -32,9 +32,8 @@ export default function About() {
       <div className="relative max-w-6xl mx-auto px-6">
         {/* Header */}
         <FadeIn className="mb-16">
-          <div className="flex items-center gap-3 mb-3">
-            <span className="font-mono text-xs text-accent">05.</span>
-            <div className="h-px bg-border-c" style={{ width: 60 }} />
+          <div className="accent-divider mb-4">
+            <span className="font-mono text-xs text-accent tracking-wider">05.</span>
           </div>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-text">
             About
@@ -97,7 +96,7 @@ export default function About() {
               {focuses.map((item) => (
                 <div
                   key={item.title}
-                  className="glass rounded-xl p-5 border border-border-c/50 hover:border-accent/20 transition-all duration-300 group"
+                  className="glass card-glow rounded-xl p-5 border border-border-c/50 hover:border-accent/25 transition-all duration-500 group"
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-accent group-hover:shadow-[0_0_6px_rgba(56,189,248,0.8)] transition-all" />

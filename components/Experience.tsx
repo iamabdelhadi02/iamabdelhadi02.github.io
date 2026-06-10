@@ -100,9 +100,8 @@ export default function Experience() {
       <div className="relative max-w-6xl mx-auto px-6">
         {/* Header */}
         <FadeIn className="mb-16">
-          <div className="flex items-center gap-3 mb-3">
-            <span className="font-mono text-xs text-accent">04.</span>
-            <div className="h-px bg-border-c" style={{ width: 60 }} />
+          <div className="accent-divider mb-4">
+            <span className="font-mono text-xs text-accent tracking-wider">04.</span>
           </div>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-text">
             Experience
@@ -141,11 +140,11 @@ export default function Experience() {
 
                     {/* Card */}
                     <div
-                      className={`glass rounded-xl p-6 border transition-all duration-300 ${
+                      className={`glass card-glow rounded-xl p-6 border transition-all duration-500 ${
                         exp.color === 'accent'
-                          ? 'border-accent/15 hover:border-accent/30'
+                          ? 'border-accent/15 hover:border-accent/35 hover:shadow-accent/5'
                           : exp.color === 'accent-violet'
-                          ? 'border-accent-violet/15 hover:border-accent-violet/30'
+                          ? 'border-accent-violet/15 hover:border-accent-violet/35 hover:shadow-accent-violet/5'
                           : 'border-border-c/40 hover:border-border-c/70'
                       }`}
                     >

@@ -39,21 +39,21 @@ function AgentTerminal() {
       initial={{ opacity: 0, y: 20, scale: 0.98 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ delay: 0.8, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      className="glass rounded-xl overflow-hidden glow-cyan"
+      className="glass rounded-2xl overflow-hidden glow-cyan"
       style={{ animation: 'float 6s ease-in-out infinite', animationDelay: '1s' }}
     >
       {/* Terminal header */}
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-border-c/60 bg-surface/50">
-        <div className="w-3 h-3 rounded-full bg-red-500/60" />
-        <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
-        <div className="w-3 h-3 rounded-full bg-green-500/60" />
-        <span className="ml-2 text-muted font-mono text-xs">agent.runtime.ts</span>
-        <span className="ml-auto w-2 h-2 rounded-full bg-accent-green animate-pulse" />
+      <div className="flex items-center gap-2 px-5 py-3 border-b border-border-c/40 bg-surface/60">
+        <div className="w-3 h-3 rounded-full bg-red-500/70 shadow-[0_0_6px_rgba(239,68,68,0.5)]" />
+        <div className="w-3 h-3 rounded-full bg-yellow-500/70 shadow-[0_0_6px_rgba(234,179,8,0.5)]" />
+        <div className="w-3 h-3 rounded-full bg-green-500/70 shadow-[0_0_6px_rgba(74,222,128,0.5)]" />
+        <span className="ml-2 text-muted font-mono text-[10px] tracking-wider">agent.runtime.ts</span>
+        <span className="ml-auto w-2 h-2 rounded-full bg-accent-green shadow-[0_0_6px_rgba(74,222,128,0.7)] animate-pulse" />
       </div>
       {/* Terminal body */}
       <div
         ref={terminalRef}
-        className="p-4 h-52 overflow-hidden font-mono text-xs leading-relaxed"
+        className="p-5 h-52 overflow-hidden font-mono text-xs leading-relaxed"
         style={{ scrollBehavior: 'smooth' }}
       >
         {agentLines.slice(0, visibleLines).map((line, i) => (
@@ -91,18 +91,22 @@ export default function Hero() {
       {/* Background */}
       <div className="absolute inset-0 grid-bg" />
 
-      {/* Glow orbs */}
+      {/* Animated glow orbs */}
       <div
-        className="orb w-96 h-96 top-1/4 -left-32"
+        className="orb orb-slow w-96 h-96 top-1/4 -left-32"
         style={{ background: 'rgba(56, 189, 248, 0.12)' }}
       />
       <div
-        className="orb w-80 h-80 top-1/3 right-0"
+        className="orb orb-medium w-80 h-80 top-1/3 right-0"
         style={{ background: 'rgba(129, 140, 248, 0.1)' }}
       />
       <div
-        className="orb w-64 h-64 bottom-20 left-1/3"
+        className="orb orb-fast w-64 h-64 bottom-20 left-1/3"
         style={{ background: 'rgba(74, 222, 128, 0.06)' }}
+      />
+      <div
+        className="orb orb-slow w-72 h-72 top-2/3 right-1/4"
+        style={{ background: 'rgba(56, 189, 248, 0.05)' }}
       />
 
       {/* Fade overlay at bottom */}
@@ -133,7 +137,7 @@ export default function Hero() {
             <motion.h1
               {...fadeUp}
               transition={{ delay: 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-text mb-6"
+              className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.02] tracking-tight text-text mb-6"
             >
               I turn ideas
               <br />
@@ -180,8 +184,8 @@ export default function Hero() {
               className="flex flex-wrap items-center gap-4 mb-10"
             >
               <a
-                href="mailto:abdelhadi.djafer.02@gmail.com"
-                className="group flex items-center gap-2 px-6 py-3 bg-accent text-bg font-mono text-sm font-medium rounded-lg hover:bg-accent/90 transition-all duration-200 hover:shadow-lg hover:shadow-accent/20"
+                href="mailto:Abdelhadi%20Djafer%3Cabdelhadi.djafer.02%40gmail.com%3E"
+                className="group btn-shimmer flex items-center gap-2 px-6 py-3 bg-accent text-bg font-mono text-sm font-medium rounded-xl hover:bg-accent/90 transition-all duration-300 hover:shadow-xl hover:shadow-accent/25 hover:scale-[1.02]"
               >
                 Send a message
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -235,7 +239,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2, duration: 0.8 }}
-              className="grid grid-cols-3 gap-4 mt-4"
+              className="grid grid-cols-3 gap-3 mt-4"
             >
               {[
                 { value: '~5', label: 'years production' },
@@ -244,10 +248,10 @@ export default function Hero() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="glass rounded-lg p-4 text-center"
+                  className="glass card-glow rounded-xl p-4 text-center border border-border-c/40 hover:border-accent/20 transition-all duration-300"
                 >
-                  <div className="font-display text-2xl font-bold text-accent">{stat.value}</div>
-                  <div className="text-muted font-mono text-xs mt-1">{stat.label}</div>
+                  <div className="font-display text-2xl font-bold gradient-text mb-0.5">{stat.value}</div>
+                  <div className="text-muted font-mono text-[10px] tracking-wide">{stat.label}</div>
                 </div>
               ))}
             </motion.div>
@@ -259,10 +263,14 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.8 }}
-          className="flex flex-col items-center gap-2 mt-20"
+          className="flex flex-col items-center gap-3 mt-20"
         >
-          <span className="font-mono text-xs text-muted">scroll to explore</span>
-          <div className="w-px h-8 bg-gradient-to-b from-border-c to-transparent" />
+          <span className="font-mono text-[10px] text-muted tracking-[0.2em] uppercase">scroll to explore</span>
+          <motion.div
+            animate={{ y: [0, 8, 0], opacity: [0.3, 0.8, 0.3] }}
+            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            className="w-px h-10 bg-gradient-to-b from-accent/60 to-transparent"
+          />
         </motion.div>
       </div>
     </section>

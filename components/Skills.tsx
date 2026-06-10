@@ -109,13 +109,16 @@ export default function Skills() {
   return (
     <section id="skills" className="relative py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-bg via-surface/10 to-bg pointer-events-none" />
+      <div
+        className="orb orb-medium w-[400px] h-[400px] top-1/3 -right-32 opacity-20"
+        style={{ background: 'rgba(129, 140, 248, 0.06)' }}
+      />
 
       <div className="relative max-w-6xl mx-auto px-6">
         {/* Header */}
         <FadeIn className="mb-16">
-          <div className="flex items-center gap-3 mb-3">
-            <span className="font-mono text-xs text-accent">03.</span>
-            <div className="h-px bg-border-c" style={{ width: 60 }} />
+          <div className="accent-divider mb-4">
+            <span className="font-mono text-xs text-accent tracking-wider">03.</span>
           </div>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-text">
             Skills & Stack
@@ -131,7 +134,7 @@ export default function Skills() {
           {skillGroups.map((group) => (
             <StaggerItem key={group.label}>
               <div
-                className={`glass glass-hover rounded-xl p-6 border ${group.borderColor} h-full`}
+                className={`glass glass-hover card-glow rounded-xl p-6 border ${group.borderColor} h-full hover:shadow-lg transition-all duration-500`}
               >
                 {/* Group header */}
                 <div className="flex items-center gap-2 mb-4">

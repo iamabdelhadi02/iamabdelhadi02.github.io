@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect, useCallback } from 'react'
+import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const navLinks = [
@@ -11,6 +11,30 @@ const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ]
+
+function ScrollProgress() {
+  const scaleX = useMotionValue(0)
+  const smoothProgress = useSpring(scaleX, { stiffness: 100, damping: 30 })
+
+  const updateProgress = useCallback(() => {
+    const scrollTop = window.scrollY
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight
+    const progress = docHeight > 0 ? scrollTop / docHeight : 0
+    scaleX.set(progress)
+  }, [scaleX])
+
+  useEffect(() => {
+    window.addEventListener('scroll', updateProgress, { passive: true })
+    return () => window.removeEventListener('scroll', updateProgress)
+  }, [updateProgress])
+
+  return (
+    <motion.div
+      className="scroll-progress"
+      style={{ scaleX: smoothProgress }}
+    />
+  )
+}
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -30,13 +54,14 @@ export default function Nav() {
 
   return (
     <>
+      <ScrollProgress />
       <motion.header
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
           scrolled
-            ? 'bg-bg/80 backdrop-blur-xl border-b border-border-c/50'
+            ? 'bg-bg/75 backdrop-blur-2xl border-b border-border-c/40 shadow-[0_1px_0_rgba(255,255,255,0.02)]'
             : 'bg-transparent'
         }`}
       >
@@ -72,7 +97,7 @@ export default function Nav() {
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="mailto:abdelhadi.djafer.02@gmail.com"
+              href="mailto:Abdelhadi%20Djafer%3Cabdelhadi.djafer.02%40gmail.com%3E"
               className="px-4 py-2 text-sm font-mono text-accent border border-accent/30 rounded-lg hover:bg-accent/10 transition-all duration-200"
             >
               Get in touch
@@ -93,25 +118,25 @@ export default function Nav() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="fixed top-16 left-0 right-0 z-40 glass border-b border-border-c/50 md:hidden"
+            initial={{ opacity: 0, y: -16, scaleY: 0.95 }}
+            animate={{ opacity: 1, y: 0, scaleY: 1 }}
+            exit={{ opacity: 0, y: -16, scaleY: 0.95 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed top-16 left-0 right-0 z-40 mx-4 glass rounded-2xl border border-border-c/50 shadow-2xl md:hidden origin-top"
           >
             <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => handleNav(link.href)}
-                  className="text-left py-3 text-muted-2 hover:text-text font-body text-sm transition-colors border-b border-border-c/30 last:border-0"
+                  className="text-left py-3 px-2 text-muted-2 hover:text-text hover:bg-surface/50 rounded-lg font-body text-sm transition-all"
                 >
                   {link.label}
                 </button>
               ))}
               <a
-                href="mailto:abdelhadi.djafer.02@gmail.com"
-                className="mt-2 py-3 text-center font-mono text-sm text-accent border border-accent/30 rounded-lg hover:bg-accent/10 transition-all"
+                href="mailto:Abdelhadi%20Djafer%3Cabdelhadi.djafer.02%40gmail.com%3E"
+                className="mt-3 py-3 text-center font-mono text-sm text-accent border border-accent/30 rounded-xl hover:bg-accent/10 hover:border-accent/50 transition-all"
               >
                 Get in touch
               </a>

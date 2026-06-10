@@ -7,7 +7,7 @@ const socials = [
   {
     label: 'Email',
     handle: 'abdelhadi.djafer.02@gmail.com',
-    href: 'mailto:abdelhadi.djafer.02@gmail.com',
+    href: 'mailto:Abdelhadi%20Djafer%3Cabdelhadi.djafer.02%40gmail.com%3E',
     icon: Mail,
     color: 'accent',
   },
@@ -41,8 +41,12 @@ export default function Contact() {
         {/* Background */}
         <div className="absolute inset-0 grid-bg opacity-50" />
         <div
-          className="orb w-96 h-96 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          style={{ background: 'rgba(56, 189, 248, 0.08)' }}
+          className="orb orb-medium w-96 h-96 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          style={{ background: 'rgba(56, 189, 248, 0.1)' }}
+        />
+        <div
+          className="orb orb-slow w-64 h-64 bottom-0 right-0 translate-x-1/4 translate-y-1/4"
+          style={{ background: 'rgba(129, 140, 248, 0.07)' }}
         />
 
         <div className="relative max-w-6xl mx-auto px-6">
@@ -64,8 +68,8 @@ export default function Contact() {
 
             {/* Primary CTA */}
             <a
-              href="mailto:abdelhadi.djafer.02@gmail.com"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-accent text-bg font-mono font-medium rounded-xl hover:bg-accent/90 transition-all duration-200 hover:shadow-xl hover:shadow-accent/20 mb-16 text-sm"
+              href="mailto:Abdelhadi%20Djafer%3Cabdelhadi.djafer.02%40gmail.com%3E"
+              className="group btn-shimmer inline-flex items-center gap-3 px-8 py-4 bg-accent text-bg font-mono font-medium rounded-xl hover:bg-accent/90 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/30 hover:scale-[1.02] mb-16 text-sm"
             >
               <Mail size={16} />
               abdelhadi.djafer.02@gmail.com
@@ -85,7 +89,7 @@ export default function Contact() {
                   href={href}
                   target={href.startsWith('mailto') ? undefined : '_blank'}
                   rel="noopener noreferrer"
-                  className="group glass glass-hover rounded-xl p-4 flex flex-col gap-3 border border-border-c/50 hover:border-accent/30 transition-all duration-300"
+                  className="group glass glass-hover card-glow rounded-xl p-5 flex flex-col gap-3 border border-border-c/50 hover:border-accent/30 transition-all duration-500"
                 >
                   <div className="flex items-center justify-between">
                     <div className="w-8 h-8 rounded-lg bg-surface-2 flex items-center justify-center group-hover:bg-accent/10 transition-colors border border-border-c/40">
@@ -109,11 +113,11 @@ export default function Contact() {
         </div>
 
         {/* Footer */}
-        <div className="relative max-w-6xl mx-auto px-6 mt-24 pt-8 border-t border-border-c/40">
+        <div className="relative max-w-6xl mx-auto px-6 mt-24 pt-8 border-t border-border-c/30">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-7 h-7 rounded-lg bg-accent/10 border border-accent/30 flex items-center justify-center">
-                <span className="font-mono text-accent text-xs">AD</span>
+              <div className="w-8 h-8 rounded-lg bg-accent/10 border border-accent/25 flex items-center justify-center group hover:bg-accent/20 transition-colors">
+                <span className="font-mono text-accent text-xs font-medium">AD</span>
               </div>
               <span className="font-display font-semibold text-muted-2 text-sm">
                 Abdelhadi Djafer
@@ -121,11 +125,11 @@ export default function Contact() {
             </div>
             <div className="flex items-center gap-6">
               <p className="font-mono text-xs text-muted">
-                Built with Next.js · Deployed on Vercel
+                Next.js · GitHub Pages
               </p>
-              <div className="flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse" />
-                <span className="font-mono text-xs text-muted">Available for work</span>
+              <div className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent-green shadow-[0_0_6px_rgba(74,222,128,0.6)] animate-pulse" />
+                <span className="font-mono text-[10px] text-muted tracking-wide">Available for work</span>
               </div>
             </div>
           </div>

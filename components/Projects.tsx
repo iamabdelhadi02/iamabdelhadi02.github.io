@@ -248,13 +248,17 @@ export default function Projects() {
     <section id="projects" className="relative py-32 overflow-hidden">
       {/* Subtle bg */}
       <div className="absolute inset-0 bg-gradient-to-b from-bg via-surface/20 to-bg pointer-events-none" />
+      {/* Background orb */}
+      <div
+        className="orb orb-slow w-[500px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30"
+        style={{ background: 'rgba(56, 189, 248, 0.04)' }}
+      />
 
       <div className="relative max-w-6xl mx-auto px-6">
         {/* Section header */}
         <FadeIn className="mb-16">
-          <div className="flex items-center gap-3 mb-3">
-            <span className="font-mono text-xs text-accent">02.</span>
-            <div className="h-px flex-1 bg-border-c" style={{ maxWidth: 60 }} />
+          <div className="accent-divider mb-4">
+            <span className="font-mono text-xs text-accent tracking-wider">02.</span>
           </div>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-text">
             Selected Work
@@ -267,7 +271,7 @@ export default function Projects() {
 
         {/* ── WEGETHER — featured large card ── */}
         <FadeIn className="mb-8">
-          <div className="glass glass-hover rounded-2xl overflow-hidden border border-border-c/60 hover:border-accent/20 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/5">
+          <div className="glass glass-hover card-glow rounded-2xl overflow-hidden border border-border-c/50 hover:border-accent/25 transition-all duration-500 hover:shadow-2xl hover:shadow-accent/5">
             <div className="p-8 lg:p-10">
               <div className="grid lg:grid-cols-2 gap-10 items-start">
                 {/* Left */}
@@ -304,7 +308,7 @@ export default function Projects() {
                   </p>
 
                   {/* Architecture highlights */}
-                  <div className="grid grid-cols-2 gap-3 mb-6">
+                  <div className="grid grid-cols-2 gap-2.5 mb-6">
                     {[
                       { icon: Smartphone, label: 'Mobile', desc: 'iOS + Android' },
                       { icon: Server, label: 'Backend', desc: 'AWS Lambda + DynamoDB' },
@@ -313,14 +317,14 @@ export default function Projects() {
                     ].map(({ icon: Icon, label, desc }) => (
                       <div
                         key={label}
-                        className="flex items-start gap-2 p-3 rounded-lg bg-surface/50 border border-border-c/40"
+                        className="flex items-start gap-2.5 p-3 rounded-xl bg-surface/40 border border-border-c/30 hover:border-accent/20 hover:bg-surface/60 transition-all duration-300 group"
                       >
-                        <div className="w-6 h-6 rounded flex items-center justify-center bg-accent/10 flex-shrink-0 mt-0.5">
-                          <Icon size={12} className="text-accent" />
+                        <div className="w-7 h-7 rounded-lg flex items-center justify-center bg-accent/10 flex-shrink-0 mt-0.5 group-hover:bg-accent/15 transition-colors">
+                          <Icon size={13} className="text-accent" />
                         </div>
                         <div>
-                          <div className="text-text text-xs font-mono font-medium">{label}</div>
-                          <div className="text-muted text-xs mt-0.5">{desc}</div>
+                          <div className="text-text text-xs font-mono font-medium mb-0.5">{label}</div>
+                          <div className="text-muted text-[11px] leading-tight">{desc}</div>
                         </div>
                       </div>
                     ))}
@@ -376,7 +380,7 @@ export default function Projects() {
         <StaggerContainer className="grid md:grid-cols-2 gap-6">
           {/* Language Master */}
           <StaggerItem>
-            <div className="glass glass-hover rounded-2xl overflow-hidden border border-border-c/60 hover:border-accent-violet/30 transition-all duration-300 h-full">
+            <div className="glass glass-hover card-glow rounded-2xl overflow-hidden border border-border-c/50 hover:border-accent-violet/30 transition-all duration-500 h-full">
               <div className="p-8">
                 <div className="flex items-start justify-between mb-6">
                   <div>
@@ -441,7 +445,7 @@ export default function Projects() {
 
           {/* This Portfolio */}
           <StaggerItem>
-            <div className="glass glass-hover rounded-2xl overflow-hidden border border-border-c/60 hover:border-accent/20 transition-all duration-300 h-full">
+            <div className="glass glass-hover card-glow rounded-2xl overflow-hidden border border-border-c/50 hover:border-accent/25 transition-all duration-500 h-full">
               <div className="p-8">
                 <div className="flex items-start justify-between mb-6">
                   <span className="font-mono text-4xl font-bold text-border-c select-none">03</span>
