@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import { MailtoLink } from './MailtoLink'
 
 const navLinks = [
   { label: 'Work', href: '#projects' },
@@ -96,12 +97,12 @@ export default function Nav() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <a
-              href="mailto:abdelhadi.djafer.02@gmail.com"
+            <MailtoLink
+              email="abdelhadi.djafer.02@gmail.com"
               className="px-4 py-2 text-sm font-mono text-accent border border-accent/30 rounded-lg hover:bg-accent/10 transition-all duration-200"
             >
               Get in touch
-            </a>
+            </MailtoLink>
           </div>
 
           {/* Mobile toggle */}
@@ -134,12 +135,12 @@ export default function Nav() {
                   {link.label}
                 </button>
               ))}
-              <a
-                href="mailto:abdelhadi.djafer.02@gmail.com"
-                className="mt-3 py-3 text-center font-mono text-sm text-accent border border-accent/30 rounded-xl hover:bg-accent/10 hover:border-accent/50 transition-all"
+              <MailtoLink
+                email="abdelhadi.djafer.02@gmail.com"
+                className="mt-3 py-3 text-center font-mono text-sm text-accent border border-accent/30 rounded-xl hover:bg-accent/10 hover:border-accent/50 transition-all block"
               >
                 Get in touch
-              </a>
+              </MailtoLink>
             </div>
           </motion.div>
         )}

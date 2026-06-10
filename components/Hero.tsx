@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Github, Twitter, Linkedin, MapPin } from 'lucide-react'
+import { MailtoLink } from './MailtoLink'
 
 const agentLines = [
   { text: '> initializing agentic runtime...', type: 'cmd', delay: 200 },
@@ -183,13 +184,13 @@ export default function Hero() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="flex flex-wrap items-center gap-4 mb-10"
             >
-              <a
-                href="mailto:abdelhadi.djafer.02@gmail.com"
+              <MailtoLink
+                email="abdelhadi.djafer.02@gmail.com"
                 className="group btn-shimmer flex items-center gap-2 px-6 py-3 bg-accent text-bg font-mono text-sm font-medium rounded-xl hover:bg-accent/90 transition-all duration-300 hover:shadow-xl hover:shadow-accent/25 hover:scale-[1.02]"
               >
                 Send a message
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </a>
+              </MailtoLink>
               <a
                 href="https://github.com/iamabdelhadi02"
                 target="_blank"

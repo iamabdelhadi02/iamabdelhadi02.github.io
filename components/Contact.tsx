@@ -2,6 +2,7 @@
 
 import { Mail, Github, Twitter, Linkedin, ArrowUpRight } from 'lucide-react'
 import { FadeIn } from './FadeIn'
+import { MailtoLink } from './MailtoLink'
 
 const socials = [
   {
@@ -67,8 +68,8 @@ export default function Contact() {
             </p>
 
             {/* Primary CTA */}
-            <a
-              href="mailto:abdelhadi.djafer.02@gmail.com"
+            <MailtoLink
+              email="abdelhadi.djafer.02@gmail.com"
               className="group btn-shimmer inline-flex items-center gap-3 px-8 py-4 bg-accent text-bg font-mono font-medium rounded-xl hover:bg-accent/90 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/30 hover:scale-[1.02] mb-16 text-sm"
             >
               <Mail size={16} />
@@ -77,37 +78,58 @@ export default function Contact() {
                 size={16}
                 className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
               />
-            </a>
+            </MailtoLink>
           </FadeIn>
 
           {/* Social grid */}
           <FadeIn delay={0.2}>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto">
-              {socials.map(({ label, handle, href, icon: Icon, color }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target={href.startsWith('mailto') ? undefined : '_blank'}
-                  rel="noopener noreferrer"
-                  className="group glass glass-hover card-glow rounded-xl p-5 flex flex-col gap-3 border border-border-c/50 hover:border-accent/30 transition-all duration-500"
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="w-8 h-8 rounded-lg bg-surface-2 flex items-center justify-center group-hover:bg-accent/10 transition-colors border border-border-c/40">
-                      <Icon size={15} className="text-muted-2 group-hover:text-accent transition-colors" />
+              {socials.map(({ label, handle, href, icon: Icon, color }) => {
+                const isMailto = href.startsWith('mailto:')
+                const sharedClass =
+                  'group glass glass-hover card-glow rounded-xl p-5 flex flex-col gap-3 border border-border-c/50 hover:border-accent/30 transition-all duration-500'
+                const inner = (
+                  <>
+                    <div className="flex items-center justify-between">
+                      <div className="w-8 h-8 rounded-lg bg-surface-2 flex items-center justify-center group-hover:bg-accent/10 transition-colors border border-border-c/40">
+                        <Icon size={15} className="text-muted-2 group-hover:text-accent transition-colors" />
+                      </div>
+                      <ArrowUpRight
+                        size={13}
+                        className="text-muted opacity-0 group-hover:opacity-100 transition-all group-hover:text-accent"
+                      />
                     </div>
-                    <ArrowUpRight
-                      size={13}
-                      className="text-muted opacity-0 group-hover:opacity-100 transition-all group-hover:text-accent"
-                    />
-                  </div>
-                  <div>
-                    <div className="font-mono text-xs text-muted mb-0.5">{label}</div>
-                    <div className="font-body text-sm text-text truncate group-hover:text-accent transition-colors">
-                      {handle}
+                    <div>
+                      <div className="font-mono text-xs text-muted mb-0.5">{label}</div>
+                      <div className="font-body text-sm text-text truncate group-hover:text-accent transition-colors">
+                        {handle}
+                      </div>
                     </div>
-                  </div>
-                </a>
-              ))}
+                  </>
+                )
+                if (isMailto) {
+                  return (
+                    <MailtoLink
+                      key={label}
+                      email={handle}
+                      className={sharedClass}
+                    >
+                      {inner}
+                    </MailtoLink>
+                  )
+                }
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={sharedClass}
+                  >
+                    {inner}
+                  </a>
+                )
+              })}
             </div>
           </FadeIn>
         </div>
