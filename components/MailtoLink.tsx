@@ -13,9 +13,9 @@ export function MailtoLink({ email, className, children }: MailtoLinkProps) {
 
   const handleClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>) => {
-      e.preventDefault()
-      // Try opening mail client
-      window.location.href = `mailto:${email}`
+      console.log('[MailtoLink] clicked:', email)
+      // Try window.open as a more reliable programmatic mailto launch
+      window.open(`mailto:${email}`, '_self')
       // Also copy to clipboard as fallback
       navigator.clipboard.writeText(email).then(() => {
         setCopied(true)
