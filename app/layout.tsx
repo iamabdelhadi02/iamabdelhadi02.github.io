@@ -4,16 +4,16 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Abdelhadi Djafer — Agentic AI Engineer & Fullstack Developer',
   description:
-    'End-to-end engineering: agentic AI systems, production mobile apps (iOS + Android), and serverless AWS backends. Based in Algeria, working remotely.',
+    'End-to-end product engineering: intelligent automation, conversational AI, cross-platform mobile apps, and cloud infrastructure. Based in Algeria, working remotely.',
   keywords: [
     'Agentic AI Engineer',
     'Fullstack Developer',
-    'React Native',
-    'AWS Serverless',
-    'LLM Integration',
-    'Tool Calling',
-    'MCP',
-    'Claude AI',
+    'Intelligent Automation',
+    'Conversational AI',
+    'Cross-Platform Mobile',
+    'Cloud Infrastructure',
+    'AI-Native Products',
+    'End-to-End Delivery',
   ],
   authors: [{ name: 'Abdelhadi Djafer' }],
   openGraph: {

@@ -11,8 +11,8 @@ const agentLines = [
   { text: '✓ Lambda + DynamoDB + API Gateway: serving traffic', type: 'success', delay: 2100 },
   { text: '> shipping React Native apps to stores...', type: 'cmd', delay: 2900 },
   { text: '✓ iOS App Store + Google Play: 2 apps, both platforms', type: 'success', delay: 3500 },
-  { text: '> integrating LLM with tool calling pipeline...', type: 'cmd', delay: 4300 },
-  { text: '✓ itinerary agent: active', type: 'success', delay: 4900 },
+  { text: '> orchestrating intelligent workflows...', type: 'cmd', delay: 4300 },
+  { text: '✓ conversational agents: operational', type: 'success', delay: 4900 },
   { text: '', type: 'gap', delay: 5200 },
   { text: '> agent.ready()', type: 'cmd', delay: 5400 },
   { text: '← "Tell me what you need built."', type: 'info', delay: 6000 },
@@ -152,9 +152,9 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-muted-2 text-lg leading-relaxed max-w-md mb-8"
             >
-              I build end-to-end: agentic AI systems with tool calling and multi-agent
-              orchestration, production mobile apps on iOS and Android, and serverless
-              backends that scale without idle cost.
+              I solve product problems end-to-end — intelligent automation, conversational AI,
+              cross-platform mobile apps, and cloud infrastructure that scales
+              without idle cost.
             </motion.p>
 
             {/* Role tags */}
@@ -164,12 +164,12 @@ export default function Hero() {
               className="flex flex-wrap gap-2 mb-10"
             >
               {[
-                { label: 'Agentic AI', color: '' },
-                { label: 'Tool Calling', color: '' },
-                { label: 'MCP Protocol', color: '' },
-                { label: 'React Native', color: 'tag-violet' },
-                { label: 'AWS Serverless', color: 'tag-violet' },
-                { label: 'LLM Integration', color: 'tag-green' },
+                { label: 'Intelligent Automation', color: '' },
+                { label: 'Conversational AI', color: '' },
+                { label: 'Cross-Platform Mobile', color: 'tag-violet' },
+                { label: 'Cloud Infrastructure', color: 'tag-violet' },
+                { label: 'AI-Native Products', color: 'tag-green' },
+                { label: 'End-to-End Delivery', color: 'tag-green' },
               ].map((t) => (
                 <span key={t.label} className={`tag ${t.color}`}>
                   {t.label}
