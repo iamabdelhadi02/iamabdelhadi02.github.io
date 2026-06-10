@@ -80,6 +80,7 @@ body {
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
   opacity: 0;
   transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 .glass:hover::before {
   opacity: 1;
@@ -337,6 +338,7 @@ body {
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   transition: left 0.5s ease;
+  pointer-events: none;
 }
 .btn-shimmer:hover::after {
   left: 100%;
