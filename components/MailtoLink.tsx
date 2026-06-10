@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, ReactNode } from 'react'
+import { useState, ReactNode } from 'react'
 
 interface MailtoLinkProps {
   email: string
@@ -11,28 +11,21 @@ interface MailtoLinkProps {
 export function MailtoLink({ email, className, children }: MailtoLinkProps) {
   const [copied, setCopied] = useState(false)
 
-  const handleClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>) => {
-      console.log('[MailtoLink] clicked:', email)
-      // Try window.open as a more reliable programmatic mailto launch
-      window.open(`mailto:${email}`, '_self')
-      // Also copy to clipboard as fallback
-      navigator.clipboard.writeText(email).then(() => {
-        setCopied(true)
-        setTimeout(() => setCopied(false), 2000)
-      }).catch(() => {})
-    },
-    [email]
-  )
-
   return (
     <a
       href={`mailto:${email}`}
-      onClick={handleClick}
+      onClick={() => {
+        // Silently copy to clipboard — do NOT preventDefault,
+        // the native <a href> handles the mailto: protocol launch
+        navigator.clipboard.writeText(email).then(() => {
+          setCopied(true)
+          setTimeout(() => setCopied(false), 2000)
+        }).catch(() => {})
+      }}
       className={className}
-      title={copied ? 'Email copied!' : `Email ${email}`}
+      title={copied ? 'Email copied to clipboard!' : `Open email to: ${email}`}
     >
-      {copied ? 'Copied to clipboard ✓' : children}
+      {copied ? '✓ Copied!' : children}
     </a>
   )
 }
