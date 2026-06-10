@@ -97,7 +97,7 @@ export default function Nav() {
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="mailto:Abdelhadi%20Djafer%3Cabdelhadi.djafer.02%40gmail.com%3E"
+              href="mailto:abdelhadi.djafer.02@gmail.com"
               className="px-4 py-2 text-sm font-mono text-accent border border-accent/30 rounded-lg hover:bg-accent/10 transition-all duration-200"
             >
               Get in touch
@@ -135,7 +135,7 @@ export default function Nav() {
                 </button>
               ))}
               <a
-                href="mailto:Abdelhadi%20Djafer%3Cabdelhadi.djafer.02%40gmail.com%3E"
+                href="mailto:abdelhadi.djafer.02@gmail.com"
                 className="mt-3 py-3 text-center font-mono text-sm text-accent border border-accent/30 rounded-xl hover:bg-accent/10 hover:border-accent/50 transition-all"
               >
                 Get in touch

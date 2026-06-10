@@ -184,7 +184,7 @@ export default function Hero() {
               className="flex flex-wrap items-center gap-4 mb-10"
             >
               <a
-                href="mailto:Abdelhadi%20Djafer%3Cabdelhadi.djafer.02%40gmail.com%3E"
+                href="mailto:abdelhadi.djafer.02@gmail.com"
                 className="group btn-shimmer flex items-center gap-2 px-6 py-3 bg-accent text-bg font-mono text-sm font-medium rounded-xl hover:bg-accent/90 transition-all duration-300 hover:shadow-xl hover:shadow-accent/25 hover:scale-[1.02]"
               >
                 Send a message

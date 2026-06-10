@@ -7,7 +7,7 @@ const socials = [
   {
     label: 'Email',
     handle: 'abdelhadi.djafer.02@gmail.com',
-    href: 'mailto:Abdelhadi%20Djafer%3Cabdelhadi.djafer.02%40gmail.com%3E',
+    href: 'mailto:abdelhadi.djafer.02@gmail.com',
     icon: Mail,
     color: 'accent',
   },
@@ -68,7 +68,7 @@ export default function Contact() {
 
             {/* Primary CTA */}
             <a
-              href="mailto:Abdelhadi%20Djafer%3Cabdelhadi.djafer.02%40gmail.com%3E"
+              href="mailto:abdelhadi.djafer.02@gmail.com"
               className="group btn-shimmer inline-flex items-center gap-3 px-8 py-4 bg-accent text-bg font-mono font-medium rounded-xl hover:bg-accent/90 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/30 hover:scale-[1.02] mb-16 text-sm"
             >
               <Mail size={16} />
